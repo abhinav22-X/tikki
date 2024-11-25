@@ -30,12 +30,13 @@ body {
 	font-size: 18px;
 	font-weight: bold;
 	cursor: pointer;
+	color: black;
 }
 
 h4 {
 	text-align: center;
-	color: #333; /* Dark gray heading */
 	margin-top: 10px;
+	color: black;
 }
 
 .task-list-container {
@@ -48,6 +49,12 @@ h4 {
 .task-list {
 	margin: 10px;
 	width: calc(25% - 20px);
+}
+
+h2 {
+	text-align: center;
+	margin-top: 10px;
+	color: black;
 }
 
 .task-card {

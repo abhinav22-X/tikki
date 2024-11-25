@@ -1,0 +1,53 @@
+.card {
+	width: 300px;
+	height: 300px;
+	background-color: #f0f0f0;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.task-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.task-list li {
+	padding: 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+.task-list li:last-child {
+	border-bottom: none;
+}
+
+.input-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.input-container input {
+	width: 70%;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+}
+
+.add-task-button {
+	width: 20%;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	background-color: #4caf50;
+	color: #fff;
+}

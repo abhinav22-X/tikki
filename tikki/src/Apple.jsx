@@ -1,8 +1,6 @@
-import React from "react";
 import "./App2.css";
 
 function Apple() {
-	
 	return (
 		<div className="container">
 			{/* Top Section */}

@@ -6,7 +6,7 @@ body {
 	align-items: flex-start;
 	min-height: 100vh;
 	font-family: Arial, sans-serif;
-	background-color: #f7f7f7; /* Soft gray background */
+	background-color: black; /* Soft gray background */
 }
 
 .container {
@@ -20,6 +20,11 @@ body {
 }
 
 h1 {
+	text-align: center;
+	color: #333; /* Dark gray heading */
+}
+
+h2 {
 	text-align: center;
 	color: #333; /* Dark gray heading */
 }
@@ -59,25 +64,27 @@ button:hover {
 	background-color: #3e8e41; /* Darker green hover */
 }
 
-#tikList {
+#taskList {
 	list-style-type: none;
 	padding: 0;
+	background-color: #666;
 }
 
-.tik-item {
+.task-item {
 	background-color: #f9f9f9; /* Light gray background */
 	border: 1px solid #ddd; /* Light gray border */
 	padding: 10px;
 	margin-bottom: 10px;
 	border-radius: 4px;
+	color: #d32f2f;
 }
 
-.tik-item button {
+.task-item button {
 	background-color: #f44336; /* Red button */
 	margin-top: 5px;
 }
 
-.tik-item button:hover {
+.task-item button:hover {
 	background-color: #d32f2f; /* Darker red hover */
 }
 

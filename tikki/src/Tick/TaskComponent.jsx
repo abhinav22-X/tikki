@@ -15,7 +15,7 @@ function TaskComponent() {
 
 	return (
 		<div className="todo-card">
-			<h2 style={{ textAlign: "center" }}>Abhinav</h2>
+			<h2>Abhinav</h2>
 			<div className="task-list">
 				{taskItems.map((task) => (
 					<div

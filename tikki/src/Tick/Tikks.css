@@ -6,12 +6,12 @@ body {
 	align-items: flex-start;
 	min-height: 100vh;
 	font-family: Arial, sans-serif;
-	background-color: rgb(122, 224, 39); /* Soft gray background */
+	background-color: white; /* Soft gray background */
 }
 
 .container {
 	width: 100%;
-	max-width: 600px;
+	max-width: 1200px;
 	padding: 20px;
 	background-color: #fff; /* White background */
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -19,55 +19,42 @@ body {
 	border-radius: 10px; /* Rounded corners */
 }
 
-h1 {
-	text-align: center;
-	color: #333; /* Dark gray heading */
+.date-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
-h2 {
-	text-align: center;
-	color: #333; /* Dark gray heading */
-}
-
-.input-group {
-	margin-bottom: 15px;
-}
-
-label {
-	display: block;
-	margin-bottom: 5px;
+.date-text {
+	font-size: 18px;
 	font-weight: bold;
-	color: #666; /* Medium gray label */
-}
-
-input[type="text"] {
-	width: 100%;
-	padding: 8px;
-	border: 1px solid #ccc; /* Light gray border */
-	border-radius: 4px;
-	box-sizing: border-box;
-}
-
-button {
-	display: block;
-	width: 100%;
-	padding: 10px;
-	background-color: #4caf50; /* Green button */
-	color: #fff; /* White button text */
-	border: none;
-	border-radius: 4px;
 	cursor: pointer;
-	font-size: 16px;
 }
 
-button:hover {
-	background-color: #3e8e41; /* Darker green hover */
+h4 {
+	text-align: center;
+	color: #333; /* Dark gray heading */
+	margin-top: 10px;
 }
 
-#taskList {
-	list-style-type: none;
-	padding: 0;
-	background-color: #666;
+.task-list-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.task-list {
+	margin: 10px;
+	width: calc(25% - 20px);
+}
+
+.task-card {
+	background-color: #f9f9f9; /* Light gray background */
+	border: 1px solid #ddd; /* Light gray border */
+	padding: 10px;
+	border-radius: 4px;
 }
 
 .task-item {
@@ -93,10 +80,8 @@ button:hover {
 	.container {
 		padding: 10px;
 	}
-	input[type="text"] {
-		padding: 5px;
-	}
-	button {
-		padding: 5px;
+	.task-list {
+		width: 100%;
+		margin: 10px 0;
 	}
 }

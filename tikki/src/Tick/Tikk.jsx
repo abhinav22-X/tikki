@@ -44,27 +44,28 @@ function Tikk() {
 	return (
 		<>
 			<Provider store={store}>
-				<div className="container">
-					<div className="date-container">
-						<div
-							className="date-text"
-							onClick={() => setCurrentDate(getDate())}
-						>
-							{currentDate}
-						</div>
-						<h4>FAMILY</h4>
+				<div className="date-container">
+					<div
+						className="date-text"
+						onClick={() => setCurrentDate(getDate())}
+					>
+						{currentDate}
 					</div>
+					<h4>FAMILY</h4>
+				</div>
+
+				<div className="task-list-container">
 					<div className="task-list">
 						<TaskComponent />
 					</div>
-					<div className="task-list">
-						{friends.map((friend, index) => (
-							<FriendsTaskComponent
-								key={index}
-								friend={friend}
-							/>
-						))}
-					</div>
+					{friends.map((friend, index) => (
+						<div
+							className="task-list"
+							key={index}
+						>
+							<FriendsTaskComponent friend={friend} />
+						</div>
+					))}
 				</div>
 			</Provider>
 		</>

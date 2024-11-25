@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import Tikk from "./Tick/Tikk.jsx";
+import Tikk from "./Tick/Tikk";
 
 // import App from "./App.jsx";
 // import AppRedux from "./Redux/AppRedux.jsx";

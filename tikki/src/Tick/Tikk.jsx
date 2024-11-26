@@ -39,33 +39,43 @@ function getDate() {
 
 function Tikk() {
 	const [currentDate, setCurrentDate] = useState(getDate());
-	const friends = ["Ashish", "Rohit", "Siddharth"];
+	const friends = [
+		"Ashish",
+		"Rohit",
+		"Siddharth",
+		"IPS",
+		"Ashish",
+		"Rohit",
+		"Siddharth",
+	];
 
 	return (
 		<>
 			<Provider store={store}>
-				<div className="date-container">
-					<div
-						className="date-text"
-						onClick={() => setCurrentDate(getDate())}
-					>
-						{currentDate}
-					</div>
-					<h4>FAMILY</h4>
-				</div>
-
-				<div className="task-list-container">
-					<div className="task-list">
-						<TaskComponent />
-					</div>
-					{friends.map((friend, index) => (
+				<div className="container">
+					<div className="date-container">
 						<div
-							className="task-list"
-							key={index}
+							className="date-text"
+							onClick={() => setCurrentDate(getDate())}
 						>
-							<FriendsTaskComponent friend={friend} />
+							{currentDate}
 						</div>
-					))}
+						<h4>FAMILY</h4>
+					</div>
+
+					<div className="task-list-container">
+						<div className="task-list">
+							<TaskComponent />
+						</div>
+						{friends.map((friend, index) => (
+							<div
+								className="task-list"
+								key={index}
+							>
+								<FriendsTaskComponent friend={friend} />
+							</div>
+						))}
+					</div>
 				</div>
 			</Provider>
 		</>

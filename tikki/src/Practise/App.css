@@ -126,8 +126,79 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+	.top-bar {
+		font-size: 16px;
+		padding: 8px 0;
+	}
+	/* Second Bar */
+	.second-bar {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.second-bar input {
+		margin: 10px 0;
+	}
+
+	/* Third Bar */
+	.third-bar ul {
+		flex-wrap: wrap;
+		gap: 5px;
+	}
+
+	/* Cards Section */
 	.cards-container {
 		flex-direction: column;
 		align-items: center;
+	}
+
+	.card {
+		width: 90%;
+		max-width: 400px;
+	}
+}
+
+/* Responsive Design for devices with max-width 480px */
+@media (max-width: 480px) {
+	/* Top Bar */
+	.top-bar {
+		padding: 5px 0;
+		font-size: 14px;
+	}
+
+	/* Second Bar */
+	.second-bar input {
+		font-size: 14px;
+	}
+
+	.second-bar button {
+		font-size: 14px;
+		padding: 5px;
+	}
+
+	/* Third Bar */
+	.third-bar li {
+		font-size: 14px;
+		padding: 5px;
+	}
+
+	/* Cards Section */
+	.card {
+		padding: 10px;
+		font-size: 14px;
+	}
+
+	.card ul li {
+		font-size: 12px;
+	}
+
+	.card input[type="text"] {
+		font-size: 14px;
+		padding: 5px;
+	}
+
+	.card button {
+		font-size: 14px;
+		padding: 5px;
 	}
 }

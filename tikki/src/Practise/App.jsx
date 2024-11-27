@@ -126,22 +126,26 @@ const App = () => {
 					/>
 					<button onClick={handleAddGroup}>Add Group</button>
 				</div>
-				{selectedGroupId != null && (
-					<div className="friend-section">
-						<input
-							type="text"
-							value={newFriendName}
-							onChange={(e) => setNewFriendName(e.target.value)}
-							placeholder="New Friend Name"
-						/>
-						<button
-							onClick={handleAddFriend}
-							disabled={!selectedGroupId}
-						>
-							Add Friend
-						</button>
-					</div>
-				)}
+				{/* {selectedGroupId != null && ( */}
+				<div
+					className={`friend-section ${
+						!selectedGroupId ? "disabled" : ""
+					}`}
+				>
+					<input
+						type="text"
+						value={newFriendName}
+						onChange={(e) => setNewFriendName(e.target.value)}
+						placeholder="New Friend Name"
+					/>
+					<button
+						onClick={handleAddFriend}
+						disabled={!selectedGroupId}
+					>
+						Add Friend
+					</button>
+				</div>
+				{/* )} */}
 			</div>
 			{/* Third Bar - Groups */}
 			<div className="third-bar">

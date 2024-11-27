@@ -1,9 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
-import Tikk from "./Tick/Tikk";
-
-// import App from "./App.jsx";
+// import "./index.css";
+// import Tikk from "./Tick/Tikk";
+import store from "./Practise/store.jsx";
+import App from "./Practise/App.jsx";
+import { Provider } from "react-redux";
 // import AppRedux from "./Redux/AppRedux.jsx";
 // import Apple from "./Apple";
 // import Counter from "./Counter.jsx";
@@ -12,7 +13,9 @@ import Tikk from "./Tick/Tikk";
 
 createRoot(document.getElementById("root")).render(
 	<StrictMode>
-		<Tikk />
+		<Provider store={store}>
+			<App />
+		</Provider>
 	</StrictMode>
 );
 // REMOVE StrictMode for final production and check it before doing on google.

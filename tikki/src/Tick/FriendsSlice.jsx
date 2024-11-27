@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const friendsTodoListsSlice = createSlice({
 	name: "friendsTodoLists",
 	initialState: {
+		
 		friendsTodoLists: {}, // store todo lists by friend name
 	},
 	reducers: {

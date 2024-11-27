@@ -34,7 +34,10 @@ function getDate() {
 		"December",
 	];
 
-	return `${dayList[day]},${monthList[month].slice(0, 3)}'${date}`;
+	return `${dayList[day].slice(0, 3)}, ${monthList[month].slice(
+		0,
+		3
+	)}'${date}`;
 }
 
 function Tikk() {
@@ -52,30 +55,33 @@ function Tikk() {
 	return (
 		<>
 			<Provider store={store}>
-				<div className="container">
-					<div className="date-container">
+				<div className="header">
+					<div
+						className="date-text"
+						onClick={() => setCurrentDate(getDate())}
+					>
+						{currentDate}
+					</div>
+				</div>
+				<div className="header-container">
+					<div className="header2">
+						<h4 className="groups">FAMILY</h4>
+					</div>
+					<button className="add-group-button">Add Group</button>
+					<button className="add-friend-button">Add Friend</button>
+				</div>
+				<div className="task-list-container">
+					<div className="task-list">
+						<TaskComponent />
+					</div>
+					{friends.map((friend, index) => (
 						<div
-							className="date-text"
-							onClick={() => setCurrentDate(getDate())}
+							className="task-list"
+							key={index}
 						>
-							{currentDate}
+							<FriendsTaskComponent friend={friend} />
 						</div>
-						<h4>FAMILY</h4>
-					</div>
-
-					<div className="task-list-container">
-						<div className="task-list">
-							<TaskComponent />
-						</div>
-						{friends.map((friend, index) => (
-							<div
-								className="task-list"
-								key={index}
-							>
-								<FriendsTaskComponent friend={friend} />
-							</div>
-						))}
-					</div>
+					))}
 				</div>
 			</Provider>
 		</>

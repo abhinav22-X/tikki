@@ -19,7 +19,9 @@ function FriendsTaskComponent({ friend }) {
 
 	return (
 		<div className="todo-card">
-			<h2 style={{ textAlign: "center" }}>{friendName}</h2>
+			<h2 >
+				{friendName}
+			</h2>
 			<div className="task-list">
 				{friendTodoList &&
 					friendTodoList.map((task, index) => (

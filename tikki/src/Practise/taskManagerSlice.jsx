@@ -14,8 +14,18 @@ const taskManagerSlice = createSlice({
 			state.groups.push(action.payload);
 		},
 		removeGroup(state, action) {
-			state.groups = state.groups.filter(
-				(group) => group.id !== action.payload
+			const groupId = action.payload;
+			state.groups = state.groups.filter((group) => group.id !== groupId);
+			state.friends = state.friends.filter(
+				(friend) => friend.groupId !== groupId
+			);
+			state.tasks = state.tasks.filter(
+				(task) =>
+					!state.friends.some(
+						(friend) =>
+							friend.id === task.friendId &&
+							friend.groupId === groupId
+					)
 			);
 		},
 		addFriend(state, action) {

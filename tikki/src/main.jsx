@@ -5,6 +5,7 @@ import { createRoot } from "react-dom/client";
 import store from "./Practise/store.jsx";
 import App from "./Practise/App.jsx";
 import { Provider } from "react-redux";
+// import Code_notification from "./Code_samples/Code_notification.jsx";
 // import AppRedux from "./Redux/AppRedux.jsx";
 // import Apple from "./Apple";
 // import Counter from "./Counter.jsx";

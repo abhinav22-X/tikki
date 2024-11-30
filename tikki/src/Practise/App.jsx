@@ -3,11 +3,17 @@ import { useSelector, useDispatch } from "react-redux";
 import {
 	addGroup,
 	addFriend,
+	removeFriend,
+	removeGroup,
 	addTask,
 	toggleTaskCompleted,
 } from "./taskManagerSlice";
 import "./App.css";
+import "../Code_samples/Code_notification.css";
+
 import { v4 as uuidv4 } from "uuid";
+import { BsThreeDotsVertical } from "react-icons/bs";
+
 function getDate() {
 	const today = new Date();
 	const month = today.getMonth();
@@ -55,15 +61,37 @@ const App = () => {
 	const [newGroupName, setNewGroupName] = useState("");
 	const [newFriendName, setNewFriendName] = useState("");
 	const [selectedGroupId, setSelectedGroupId] = useState(null);
+	const [notificationCount, setNotificationCount] = useState(0);
+
+	const incrementNotification = () => {
+		setNotificationCount(notificationCount + 1);
+	};
 
 	// State for new task input per friend
 	const [newTaskNames, setNewTaskNames] = useState({});
 
 	const handleAddGroup = () => {
 		if (newGroupName.trim()) {
-			dispatch(addGroup({ id: uuidv4(), name: newGroupName }));
+			if (groups.some((group) => group.name === newGroupName)) {
+				alert("Group with this name already exists!");
+				return;
+			}
+			let x = uuidv4();
+			dispatch(addGroup({ id: x, name: newGroupName }));
 			setNewGroupName("");
+			setSelectedGroupId(x);
 		}
+	};
+	// const handleDeleteFriend = (friendId) => {
+	// 	dispatch(removeFriend(friendId));
+	// 	setNewTaskNames((prev) => {
+	// 		const { [friendId]: _, ...rest } = prev;
+	// 		return rest;
+	// 	});
+	// };
+	const handleDeleteGroup = (groupId) => {
+		dispatch(removeGroup(groupId));
+		setSelectedGroupId(null);
 	};
 
 	const handleAddFriend = () => {
@@ -97,7 +125,7 @@ const App = () => {
 		dispatch(toggleTaskCompleted(taskId));
 	};
 
-	const handleFriendInput = (groupId) => {
+	const handleFriendInputBtn = (groupId) => {
 		setSelectedGroupId(groupId);
 		setNewFriendName("");
 	};
@@ -126,7 +154,7 @@ const App = () => {
 					/>
 					<button onClick={handleAddGroup}>Add Group</button>
 				</div>
-				{/* {selectedGroupId != null && ( */}
+
 				<div
 					className={`friend-section ${
 						!selectedGroupId ? "disabled" : ""
@@ -149,9 +177,12 @@ const App = () => {
 			</div>
 			{/* Third Bar - Groups */}
 			<div className="third-bar">
-				<div className="group-list">
-					<ul>
-						{groups.map((group) => (
+				<ul>
+					{groups.map((group) => (
+						<div
+							key={group.id}
+							className="list-items"
+						>
 							<li
 								key={group.id}
 								className={
@@ -159,17 +190,27 @@ const App = () => {
 										? "selected-group"
 										: ""
 								}
-								onClick={() =>
-									selectedGroupId === group.id
-										? handleFriendInput(null)
-										: handleFriendInput(group.id)
-								}
 							>
-								{group.name}
+								<div
+									className="group-name"
+									onClick={() =>
+										selectedGroupId === group.id
+											? handleFriendInputBtn(null)
+											: handleFriendInputBtn(group.id)
+									}
+								>
+									{group.name}
+								</div>
 							</li>
-						))}
-					</ul>
-				</div>
+							<div className="settings-icon-container">
+								<BsThreeDotsVertical className="settings-icon" />
+							</div>
+							<div className="notification-dot">
+								{notificationCount > 0 && notificationCount}
+							</div>
+						</div>
+					))}
+				</ul>
 			</div>
 			{/* Fourth Bar */}
 			<div className="cards-container">

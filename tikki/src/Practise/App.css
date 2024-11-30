@@ -169,7 +169,6 @@
 	.cards-container {
 		flex-direction: column;
 		align-items: center;
-		overflow-y: auto; /* Added overflow-y: auto */
 	}
 
 	.card {

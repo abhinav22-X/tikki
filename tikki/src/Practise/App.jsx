@@ -63,10 +63,6 @@ const App = () => {
 	const [selectedGroupId, setSelectedGroupId] = useState(null);
 	const [notificationCount, setNotificationCount] = useState(0);
 
-	const incrementNotification = () => {
-		setNotificationCount(notificationCount + 1);
-	};
-
 	// State for new task input per friend
 	const [newTaskNames, setNewTaskNames] = useState({});
 
